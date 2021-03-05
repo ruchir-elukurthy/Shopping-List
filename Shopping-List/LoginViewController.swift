@@ -35,6 +35,10 @@ class LoginViewController: UIViewController {
         emailAddress.layer.cornerRadius = 20
         emailAddress.layer.borderWidth = 2
         emailAddress.layer.borderColor = UIColor.lightGray.cgColor
+        
+        let backButton = UIBarButtonItem()
+        backButton.title = "Back"
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
     

@@ -10,11 +10,13 @@ import Firebase
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var pageTitle: UINavigationItem!
     @IBOutlet weak var emailAddress: UITextField!
     @IBOutlet weak var password: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Shopping List"
         registerButton.setTitle("Log In", for: .normal)
         registerButton.layer.cornerRadius = 20
         registerButton.layer.borderWidth = 2
@@ -28,6 +30,10 @@ class RegisterViewController: UIViewController {
         emailAddress.layer.cornerRadius = 20
         emailAddress.layer.borderWidth = 2
         emailAddress.layer.borderColor = UIColor.lightGray.cgColor
+        
+        let backButton = UIBarButtonItem()
+        backButton.title = "Back"
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
     }
     @IBOutlet weak var registerButton: UIButton!
