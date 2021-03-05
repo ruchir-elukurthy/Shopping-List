@@ -14,9 +14,23 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        registerButton.setTitle("Log In", for: .normal)
+        registerButton.layer.cornerRadius = 20
+        registerButton.layer.borderWidth = 2
+        registerButton.backgroundColor = UIColor(red: 0, green: 0, blue: 1.2, alpha: 0.5)
+        registerButton.layer.borderColor = UIColor.blue.cgColor
+        
+        password.layer.cornerRadius = 20
+        password.layer.borderWidth = 2
+        password.layer.borderColor = UIColor.lightGray.cgColor
+        
+        emailAddress.layer.cornerRadius = 20
+        emailAddress.layer.borderWidth = 2
+        emailAddress.layer.borderColor = UIColor.lightGray.cgColor
+        
     }
+    @IBOutlet weak var registerButton: UIButton!
     
     @IBAction func registerClick(_ sender: UIButton) {
         Auth.auth().createUser(withEmail: emailAddress.text ?? "", password: password.text ?? "") { authResult, error in
@@ -35,3 +49,5 @@ class RegisterViewController: UIViewController {
     }
     
 }
+
+

@@ -13,10 +13,28 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var emailAddress: UITextField!
+    
+    
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        title = "Shopping List"
+        
+        loginButton.setTitle("Log In", for: .normal)
+        loginButton.layer.cornerRadius = 20
+        loginButton.layer.borderWidth = 2
+        loginButton.backgroundColor = UIColor(red: 200.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        loginButton.layer.borderColor = UIColor.red.cgColor
+        
+        password.layer.cornerRadius = 20
+        password.layer.borderWidth = 2
+        password.layer.borderColor = UIColor.lightGray.cgColor
+        
+        emailAddress.layer.cornerRadius = 20
+        emailAddress.layer.borderWidth = 2
+        emailAddress.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     
