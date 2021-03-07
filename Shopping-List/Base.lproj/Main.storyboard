@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Shopping List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Shopping_List" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,7 +36,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Hxy-MX-15L"/>
+                    <navigationItem key="navigationItem" title="Shopping List" id="Hxy-MX-15L"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -91,7 +91,7 @@
                         <viewLayoutGuide key="safeArea" id="L1t-N7-0KM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" largeTitleDisplayMode="always" id="Q9w-ds-spe">
+                    <navigationItem key="navigationItem" title="Shopping List" largeTitleDisplayMode="always" id="Q9w-ds-spe">
                         <barButtonItem key="backBarButtonItem" title="Back" id="MX8-KC-MSE">
                             <color key="tintColor" systemColor="labelColor"/>
                         </barButtonItem>
@@ -102,7 +102,7 @@
                         <outlet property="emailAddress" destination="tNg-30-PLV" id="tSQ-fc-Lmv"/>
                         <outlet property="password" destination="lxN-Yc-l2t" id="RRM-eD-FxJ"/>
                         <outlet property="registerButton" destination="aLS-ES-vyl" id="yt5-UX-aS4"/>
-                        <segue destination="qdM-A5-BoG" kind="show" identifier="goToList" id="2dl-cQ-RXV"/>
+                        <segue destination="VXo-PF-c4X" kind="show" identifier="goToList" id="adq-ia-Gnr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fis-dZ-hZi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -117,7 +117,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f1x-6Q-7h4">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="zxcvbn" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f1x-6Q-7h4">
                                 <rect key="frame" x="72" y="409" width="266" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -149,7 +149,7 @@
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CBo-iT-Fcf">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ruc@abc.com" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CBo-iT-Fcf">
                                 <rect key="frame" x="72" y="305" width="266" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -158,34 +158,48 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hZC-pq-ANj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="linkColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="t7p-bC-oFG"/>
+                    <navigationItem key="navigationItem" title="Shopping List" id="t7p-bC-oFG"/>
                     <connections>
                         <outlet property="emailAddress" destination="CBo-iT-Fcf" id="JVD-U3-vxW"/>
                         <outlet property="loginButton" destination="8tO-kT-fzD" id="uid-cw-wTT"/>
                         <outlet property="password" destination="f1x-6Q-7h4" id="55i-c8-KBt"/>
-                        <segue destination="qdM-A5-BoG" kind="show" identifier="goToList" id="gtW-Uq-UF6"/>
+                        <segue destination="VXo-PF-c4X" kind="presentation" identifier="goToList" modalPresentationStyle="fullScreen" id="S4k-t5-XW0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3A-gt-NEw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3452.1739130434785" y="122.54464285714285"/>
         </scene>
-        <!--List View Controller-->
-        <scene sceneID="rfx-WW-bBd">
+        <!--Shopping List-->
+        <scene sceneID="MOa-PD-1rB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IMf-6a-Dmn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="qdM-A5-BoG" customClass="ListViewController" customModule="Shopping_List" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="AeM-j7-HYW">
+                <tableViewController id="uMg-zc-Ht2" customClass="ListViewController" customModule="Shopping_List" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IQQ-hR-0ml">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="yRE-MH-d6v"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="HQQ-SV-cQs"/>
-                </viewController>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hei-Z6-lYm">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hei-Z6-lYm" id="5YE-zN-sXv">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uMg-zc-Ht2" id="H5q-Z6-E5k"/>
+                            <outlet property="delegate" destination="uMg-zc-Ht2" id="e9S-BE-q6O"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Shopping List" id="Xqu-dT-J2C"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Jz-7U-suP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4210.144927536232" y="122.54464285714285"/>
+            <point key="canvasLocation" x="5568.115942028986" y="122.54464285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fdV-FP-dmY">
@@ -195,6 +209,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="arrowshape.turn.up.backward.fill" catalog="system" id="CCa-I2-YI4">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -205,14 +220,37 @@
             </objects>
             <point key="canvasLocation" x="95.652173913043484" y="93.75"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ckO-TU-Is9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VXo-PF-c4X" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="kLE-84-Qmh"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rg0-Ep-jdj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.56640874249999995" green="0.45870987489999998" blue="0.88211155480000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uMg-zc-Ht2" kind="relationship" relationship="rootViewController" id="bGL-qD-Vyf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JQ9-Kf-RFX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4657.971014492754" y="122.54464285714285"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gtW-Uq-UF6"/>
+        <segue reference="S4k-t5-XW0"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

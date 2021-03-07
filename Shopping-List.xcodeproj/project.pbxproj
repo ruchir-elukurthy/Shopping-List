@@ -17,7 +17,7 @@
 		BA20CED925F08C06008B30C4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20CED825F08C06008B30C4 /* LoginViewController.swift */; };
 		BA20CEDC25F08C33008B30C4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20CEDB25F08C33008B30C4 /* RegisterViewController.swift */; };
 		BA20CF2125F09AB9008B30C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA20CF2025F09AB9008B30C4 /* GoogleService-Info.plist */; };
-		BA20CF2425F0B8ED008B30C4 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20CF2325F0B8ED008B30C4 /* ListViewController.swift */; };
+		BA60FEA925F58A0000957078 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60FEA825F58A0000957078 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +34,7 @@
 		BA20CED825F08C06008B30C4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BA20CEDB25F08C33008B30C4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BA20CF2025F09AB9008B30C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BA20CF2325F0B8ED008B30C4 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		BA60FEA825F58A0000957078 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		E678156EBE49DDDAC4E51E68 /* Pods-Shopping-List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopping-List.release.xcconfig"; path = "Target Support Files/Pods-Shopping-List/Pods-Shopping-List.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +89,7 @@
 				BA20CED125F08B01008B30C4 /* Info.plist */,
 				BA20CED825F08C06008B30C4 /* LoginViewController.swift */,
 				BA20CEDB25F08C33008B30C4 /* RegisterViewController.swift */,
-				BA20CF2325F0B8ED008B30C4 /* ListViewController.swift */,
+				BA60FEA825F58A0000957078 /* ListViewController.swift */,
 			);
 			path = "Shopping-List";
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 			files = (
 				BA20CED925F08C06008B30C4 /* LoginViewController.swift in Sources */,
 				BA20CEDC25F08C33008B30C4 /* RegisterViewController.swift in Sources */,
-				BA20CF2425F0B8ED008B30C4 /* ListViewController.swift in Sources */,
+				BA60FEA925F58A0000957078 /* ListViewController.swift in Sources */,
 				BA20CEC825F08AFD008B30C4 /* ViewController.swift in Sources */,
 				BA20CEC425F08AFD008B30C4 /* AppDelegate.swift in Sources */,
 				BA20CEC625F08AFD008B30C4 /* SceneDelegate.swift in Sources */,
@@ -369,7 +369,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06AC5C8BAF110C75279A5A33 /* Pods-Shopping-List.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Homepage;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Shopping-List/Info.plist";
@@ -388,7 +388,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E678156EBE49DDDAC4E51E68 /* Pods-Shopping-List.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Homepage;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Shopping-List/Info.plist";
