@@ -8,6 +8,8 @@
 import UIKit
 
 class ListViewController: UITableViewController {
+    
+    var hierarchicalData = ["a","b","c"];
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,18 +17,38 @@ class ListViewController: UITableViewController {
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
 
-//    var hierarchicalData = ["a","b","c"];
-//     
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//       return hierarchicalData.count
-//    }
-//       
-//    override func tableView(_ tableView: UITableView,
-//                            numberOfRowsInSection section: Int) -> Int {
-//       return hierarchicalData[section].count
-//    }
+     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return hierarchicalData.count;
+    }
+       
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath)
+        cell.alpha = 0
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0.05 * Double(indexPath.row),
+            animations: {
+                cell.alpha = 1
+        })
+        cell.textLabel?.text = hierarchicalData[indexPath.row]
+        print(type(of: cell))
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if(tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark) {
+            tableView.cellForRow(at: indexPath)?.accessoryType = .none
+        }
+        else {
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        }
+        print(hierarchicalData[indexPath.row])
+    }
 
-
+   
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
