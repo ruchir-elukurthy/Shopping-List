@@ -50,7 +50,6 @@ class LoginViewController: UIViewController {
                 }
                 else {
                     self!.performSegue(withIdentifier: "goToList", sender: self)
-                    print("Hello");
                 }
             }
         }

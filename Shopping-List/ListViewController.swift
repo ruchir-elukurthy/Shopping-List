@@ -9,53 +9,59 @@ import UIKit
 
 class ListViewController: UITableViewController {
     
-    var hierarchicalData = ["a","b","c"];
+    var shoppingListItems = ["Books","Clothes","Food"];
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationItem.setHidesBackButton(true, animated: true)
     }
 
-     
+  
+    @IBAction func addNewItemClick(_ sender: Any) {
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Some Title", message: "Enter a text", preferredStyle: .alert)
+
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            textField.text = "Some default text"
+        }
+
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            print("Text field: \(textField?.text)")
+        }))
+
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.alpha = 0
+            UIView.animate(
+                withDuration: 0.5,
+                delay: 0.05 * Double(indexPath.row),
+                animations: {
+                    cell.alpha = 1
+            })
+
+            cell.accessoryType = .checkmark
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        }
+    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return hierarchicalData.count;
+        // #warning Incomplete implementation, return the number of rows
+        return shoppingListItems.count
     }
-       
-    override func tableView(_ tableView: UITableView,
-                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath)
-        cell.alpha = 0
-        UIView.animate(
-            withDuration: 0.5,
-            delay: 0.05 * Double(indexPath.row),
-            animations: {
-                cell.alpha = 1
-        })
-        cell.textLabel?.text = hierarchicalData[indexPath.row]
-        print(type(of: cell))
+
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! UITableViewCell
+        cell.textLabel?.text = shoppingListItems[indexPath.item];
+
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        if(tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark) {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none
-        }
-        else {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        }
-        print(hierarchicalData[indexPath.row])
-    }
 
-    @IBAction func addButton(_ sender: Any) {
-        let alert = UIAlertController(title: "Add new item", message: "", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Add", style: UIAlertAction.Style.default, handler: { (action) in
-            <#code#>
-        }))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
    
 }
