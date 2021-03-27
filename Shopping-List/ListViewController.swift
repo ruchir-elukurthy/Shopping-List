@@ -18,17 +18,16 @@ class ListViewController: UITableViewController {
   
     @IBAction func addNewItemClick(_ sender: Any) {
         //1. Create the alert controller.
-        let alert = UIAlertController(title: "Some Title", message: "Enter a text", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Enter a new item", message: "Enter a text", preferredStyle: .alert)
 
         //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in
-            textField.text = "Some default text"
+            textField.text = ""
         }
 
         // 3. Grab the value from the text field, and print it when the user clicks OK.
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
-            print("Text field: \(textField?.text)")
         }))
 
         // 4. Present the alert.
