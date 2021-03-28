@@ -9,10 +9,31 @@ import UIKit
 
 class ListViewController: UITableViewController {
     
-    var shoppingListItems = ["Books","Clothes","Food"];
+    var shoppingListItems = [Item]();
+    
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        newItems();
+        
+//        if let items = defaults.array(forKey: "ShoppingListArray") as? [String] {
+//            shoppingListItems = items;
+//        }
+    }
+    
+    func newItems() {
+        let item1 = Item()
+        item1.itemName = "Books"
+        shoppingListItems.append(item1)
+        
+        let item2 = Item()
+        item2.itemName = "Food"
+        shoppingListItems.append(item2)
+        
+        let item3 = Item()
+        item3.itemName = "Clothes"
+        shoppingListItems.append(item3)
     }
 
   
@@ -26,13 +47,25 @@ class ListViewController: UITableViewController {
         }
 
         // 3. Grab the value from the text field, and print it when the user clicks OK.
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+        alert.addAction(UIAlertAction(title: "Add Item", style: .default, handler: { [weak alert] (_) in
+            let newItem = Item();
+            let textField = alert?.textFields![0].text // Force unwrapping because we know it exists.
+            newItem.itemName = textField ?? ""
+            self.shoppingListItems.append(newItem)
+            self.defaults.set(self.shoppingListItems, forKey: "ShoppingListArray")
+            self.tableView.reloadData();
         }))
 
         // 4. Present the alert.
         self.present(alert, animated: true, completion: nil)
     }
+    
+    
+    @IBAction func logOutClick(_ sender: UIBarButtonItem) {
+            self.navigationController!.popToRootViewController(animated: true)
+    }
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.alpha = 0
@@ -42,9 +75,10 @@ class ListViewController: UITableViewController {
                 animations: {
                     cell.alpha = 1
             })
-
-            cell.accessoryType = .checkmark
-            cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            shoppingListItems[indexPath.row].checkmark = !shoppingListItems[indexPath.row].checkmark
+            tableView.reloadData()
+            tableView.deselectRow(at: indexPath, animated: true)
+            
         }
     }
 
@@ -56,8 +90,14 @@ class ListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! UITableViewCell
-        cell.textLabel?.text = shoppingListItems[indexPath.item];
-
+        cell.textLabel?.text = shoppingListItems[indexPath.item].itemName;
+        
+        if(shoppingListItems[indexPath.row].checkmark == true) {
+            cell.accessoryType = .checkmark
+        }
+        else {
+            cell.accessoryType = .none
+        }
         return cell
     }
     

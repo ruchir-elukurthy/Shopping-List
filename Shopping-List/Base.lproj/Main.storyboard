@@ -102,7 +102,7 @@
                         <outlet property="emailAddress" destination="tNg-30-PLV" id="tSQ-fc-Lmv"/>
                         <outlet property="password" destination="lxN-Yc-l2t" id="RRM-eD-FxJ"/>
                         <outlet property="registerButton" destination="aLS-ES-vyl" id="yt5-UX-aS4"/>
-                        <segue destination="VXo-PF-c4X" kind="show" identifier="goToList" id="adq-ia-Gnr"/>
+                        <segue destination="uMg-zc-Ht2" kind="show" identifier="goToList" id="izQ-K0-hcc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fis-dZ-hZi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -165,7 +165,7 @@
                         <outlet property="emailAddress" destination="CBo-iT-Fcf" id="JVD-U3-vxW"/>
                         <outlet property="loginButton" destination="8tO-kT-fzD" id="uid-cw-wTT"/>
                         <outlet property="password" destination="f1x-6Q-7h4" id="55i-c8-KBt"/>
-                        <segue destination="VXo-PF-c4X" kind="presentation" identifier="goToList" modalPresentationStyle="fullScreen" id="S4k-t5-XW0"/>
+                        <segue destination="uMg-zc-Ht2" kind="show" identifier="goToList" id="g55-Ga-dww"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3A-gt-NEw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -196,6 +196,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Shopping List" id="Xqu-dT-J2C">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="qSE-q2-eBe">
+                            <connections>
+                                <action selector="logOutClick:" destination="uMg-zc-Ht2" id="Sri-Bt-m66"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="scN-Py-eQZ">
                             <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
                             <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
@@ -207,7 +212,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Jz-7U-suP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5568.115942028986" y="122.54464285714285"/>
+            <point key="canvasLocation" x="4683" y="154"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fdV-FP-dmY">
@@ -228,29 +233,9 @@
             </objects>
             <point key="canvasLocation" x="95.652173913043484" y="93.75"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ckO-TU-Is9">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VXo-PF-c4X" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="kLE-84-Qmh"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rg0-Ep-jdj">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.56640874249999995" green="0.45870987489999998" blue="0.88211155480000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="uMg-zc-Ht2" kind="relationship" relationship="rootViewController" id="bGL-qD-Vyf"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JQ9-Kf-RFX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4657.971014492754" y="122.54464285714285"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="S4k-t5-XW0"/>
+        <segue reference="izQ-K0-hcc"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
