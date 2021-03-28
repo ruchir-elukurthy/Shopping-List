@@ -11,15 +11,12 @@ class ListViewController: UITableViewController {
     
     var shoppingListItems = [Item]();
     
-    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
         newItems();
         
-//        if let items = defaults.array(forKey: "ShoppingListArray") as? [String] {
-//            shoppingListItems = items;
-//        }
+        
     }
     
     func newItems() {
@@ -52,7 +49,6 @@ class ListViewController: UITableViewController {
             let textField = alert?.textFields![0].text // Force unwrapping because we know it exists.
             newItem.itemName = textField ?? ""
             self.shoppingListItems.append(newItem)
-            self.defaults.set(self.shoppingListItems, forKey: "ShoppingListArray")
             self.tableView.reloadData();
         }))
 
@@ -92,12 +88,8 @@ class ListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! UITableViewCell
         cell.textLabel?.text = shoppingListItems[indexPath.item].itemName;
         
-        if(shoppingListItems[indexPath.row].checkmark == true) {
-            cell.accessoryType = .checkmark
-        }
-        else {
-            cell.accessoryType = .none
-        }
+        cell.accessoryType = shoppingListItems[indexPath.row].checkmark ? .checkmark : .none
+    
         return cell
     }
     

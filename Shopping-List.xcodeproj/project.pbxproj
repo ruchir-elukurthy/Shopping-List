@@ -19,6 +19,7 @@
 		BA20CF2125F09AB9008B30C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA20CF2025F09AB9008B30C4 /* GoogleService-Info.plist */; };
 		BA60FEA925F58A0000957078 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60FEA825F58A0000957078 /* ListViewController.swift */; };
 		BAC1DAFC261010BF00497A02 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC1DAFB261010BF00497A02 /* Item.swift */; };
+		BAC1DB00261057E600497A02 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAC1DAFE261057E600497A02 /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		BA20CF2025F09AB9008B30C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA60FEA825F58A0000957078 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		BAC1DAFB261010BF00497A02 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		BAC1DAFF261057E600497A02 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		E678156EBE49DDDAC4E51E68 /* Pods-Shopping-List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopping-List.release.xcconfig"; path = "Target Support Files/Pods-Shopping-List/Pods-Shopping-List.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,20 +83,61 @@
 		BA20CEC225F08AFD008B30C4 /* Shopping-List */ = {
 			isa = PBXGroup;
 			children = (
-				BA20CEC325F08AFD008B30C4 /* AppDelegate.swift */,
-				BA20CEC525F08AFD008B30C4 /* SceneDelegate.swift */,
-				BA20CEC725F08AFD008B30C4 /* ViewController.swift */,
-				BA20CEC925F08AFD008B30C4 /* Main.storyboard */,
+				BAC1DB062610594200497A02 /* Data Model */,
+				BAC1DB052610590900497A02 /* Plist */,
+				BAC1DB04261058EC00497A02 /* Storyboard */,
+				BAC1DB03261058DC00497A02 /* Delegates */,
+				BAC1DB02261058AE00497A02 /* View controllers */,
 				BA20CECC25F08B01008B30C4 /* Assets.xcassets */,
-				BA20CECE25F08B01008B30C4 /* LaunchScreen.storyboard */,
-				BA20CF2025F09AB9008B30C4 /* GoogleService-Info.plist */,
-				BA20CED125F08B01008B30C4 /* Info.plist */,
-				BA20CED825F08C06008B30C4 /* LoginViewController.swift */,
-				BA20CEDB25F08C33008B30C4 /* RegisterViewController.swift */,
-				BA60FEA825F58A0000957078 /* ListViewController.swift */,
-				BAC1DAFB261010BF00497A02 /* Item.swift */,
 			);
 			path = "Shopping-List";
+			sourceTree = "<group>";
+		};
+		BAC1DB02261058AE00497A02 /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA20CEDB25F08C33008B30C4 /* RegisterViewController.swift */,
+				BA20CED825F08C06008B30C4 /* LoginViewController.swift */,
+				BA60FEA825F58A0000957078 /* ListViewController.swift */,
+				BA20CEC725F08AFD008B30C4 /* ViewController.swift */,
+			);
+			path = "View controllers";
+			sourceTree = "<group>";
+		};
+		BAC1DB03261058DC00497A02 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				BA20CEC325F08AFD008B30C4 /* AppDelegate.swift */,
+				BA20CEC525F08AFD008B30C4 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		BAC1DB04261058EC00497A02 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BA20CECE25F08B01008B30C4 /* LaunchScreen.storyboard */,
+				BA20CEC925F08AFD008B30C4 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		BAC1DB052610590900497A02 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				BA20CED125F08B01008B30C4 /* Info.plist */,
+				BA20CF2025F09AB9008B30C4 /* GoogleService-Info.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		BAC1DB062610594200497A02 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				BAC1DAFE261057E600497A02 /* DataModel.xcdatamodeld */,
+				BAC1DAFB261010BF00497A02 /* Item.swift */,
+			);
+			path = "Data Model";
 			sourceTree = "<group>";
 		};
 		C674160AC1BBC0F4324E84A7 /* Pods */ = {
@@ -222,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA20CED925F08C06008B30C4 /* LoginViewController.swift in Sources */,
+				BAC1DB00261057E600497A02 /* DataModel.xcdatamodeld in Sources */,
 				BA20CEDC25F08C33008B30C4 /* RegisterViewController.swift in Sources */,
 				BA60FEA925F58A0000957078 /* ListViewController.swift in Sources */,
 				BA20CEC825F08AFD008B30C4 /* ViewController.swift in Sources */,
@@ -429,6 +473,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BAC1DAFE261057E600497A02 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BAC1DAFF261057E600497A02 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = BAC1DAFF261057E600497A02 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BA20CEB825F08AFD008B30C4 /* Project object */;
 }
