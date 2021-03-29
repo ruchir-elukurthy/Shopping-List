@@ -6,35 +6,21 @@
 //
 
 import UIKit
+import CoreData
 
 class ListViewController: UITableViewController {
     
-    var shoppingListItems = [Item]();
+    var shoppingListItems = [ShoppingItem]();
     
-
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        newItems();
         
-        
-    }
-    
-    func newItems() {
-        let item1 = Item()
-        item1.itemName = "Books"
-        shoppingListItems.append(item1)
-        
-        let item2 = Item()
-        item2.itemName = "Food"
-        shoppingListItems.append(item2)
-        
-        let item3 = Item()
-        item3.itemName = "Clothes"
-        shoppingListItems.append(item3)
     }
 
   
-    @IBAction func addNewItemClick(_ sender: Any) {
+    @IBAction func addNewItemClick(_ sender: UIBarButtonItem) {
         //1. Create the alert controller.
         let alert = UIAlertController(title: "Enter a new item", message: "Enter a text", preferredStyle: .alert)
 
@@ -45,11 +31,13 @@ class ListViewController: UITableViewController {
 
         // 3. Grab the value from the text field, and print it when the user clicks OK.
         alert.addAction(UIAlertAction(title: "Add Item", style: .default, handler: { [weak alert] (_) in
-            let newItem = Item();
+            let newItem = ShoppingItem(context: self.context);
             let textField = alert?.textFields![0].text // Force unwrapping because we know it exists.
-            newItem.itemName = textField ?? ""
+            newItem.itemName = textField
+            
+            print(newItem);
             self.shoppingListItems.append(newItem)
-            self.tableView.reloadData();
+            self.saveData()
         }))
 
         // 4. Present the alert.
@@ -72,7 +60,7 @@ class ListViewController: UITableViewController {
                     cell.alpha = 1
             })
             shoppingListItems[indexPath.row].checkmark = !shoppingListItems[indexPath.row].checkmark
-            tableView.reloadData()
+            saveData()
             tableView.deselectRow(at: indexPath, animated: true)
             
         }
@@ -93,6 +81,16 @@ class ListViewController: UITableViewController {
         return cell
     }
     
-
+    func saveData() {
+        do {
+            try context.save();
+        }
+        catch {
+            print("ERROR \(error)")
+        }
+        self.tableView.reloadData()
+    }
+    
+    
    
 }
