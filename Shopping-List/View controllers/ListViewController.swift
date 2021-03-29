@@ -16,6 +16,7 @@ class ListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        load();
         
     }
 
@@ -91,6 +92,15 @@ class ListViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
+    func load() {
+        let request: NSFetchRequest<ShoppingItem> = ShoppingItem.fetchRequest()
+        do {
+            shoppingListItems = try context.fetch(request)
+        }
+        catch {
+            print("ERROR \(error)")
+        }
+    }
     
    
 }
