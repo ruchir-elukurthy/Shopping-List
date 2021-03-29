@@ -52,6 +52,8 @@ class ListViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        context.delete(shoppingListItems[indexPath.row])
+        shoppingListItems.remove(at: indexPath.row)
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.alpha = 0
             UIView.animate(
